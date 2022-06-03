@@ -1,0 +1,32 @@
+﻿<Window x:Class="diplom.WindowForm.WindowReservServices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.WindowForm"
+        mc:Ignorable="d"
+        Title="WindowReservServices" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackLetters" Orientation="Horizontal" Background="{StaticResource ColorMain}" Margin="0,0,-0.4,5">
+            <TextBlock FontWeight="Bold" Foreground="White" Margin="5" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"></TextBlock>
+            <TextBlock FontSize="20" Margin="0,10,589,30.2" Foreground="White" Width="469">Бронирование дополнитальных сервисов</TextBlock>
+        </StackPanel>
+       
+        <DataGrid Grid.Row="1" x:Name="DataGridReservServ" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Reservation" Binding="{Binding Reservation.ID}" />
+                <DataGridTextColumn Header="Services" Binding="{Binding Services.Services1}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" >
+            <Button x:Name="BtnAddReservServ" Click="BtnAddReservServ_Click"  Style="{StaticResource MenuButton}" Content="Добавить" Margin="20,10,20,10.4" Height="Auto" Width="200" FontSize="15" />
+            <Button x:Name="BtnDeleteReservServ" Click="BtnDeleteReservServ_Click"  Style="{StaticResource MenuButton}"  Content="Удалить" Margin="20,10,20,10.4" Width="200" FontSize="15" Height="Auto"/>
+            <Button x:Name="BtnBackReservServ" Click="BtnBackReservServ_Click"  Style="{StaticResource MenuButton}"  Content="Назад" Margin="20,10,20,10.4" FontSize="15" Height="Auto" Width="200"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="diplom.WindowMenu.WindowMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.WindowMenu"
+        mc:Ignorable="d"
+        Title="Главное" Height="450" Width="800">
+    <Grid>
+        <Image Source="D:\diplom\с.jpg" Margin="273,10,273.6,10" Width="247" RenderTransformOrigin="0.5,0.5"/>
+        <UniformGrid Columns="2" Rows="2" Margin="-1,-3,-2.4,-10" RenderTransformOrigin="0.5,0.5">
+            <UniformGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.104"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UniformGrid.RenderTransform>
+            <Button x:Name="BtnClient" Click="BtnClient_Click"         
+                    Content ="Клиенты" Margin="34,97,122.4,64"  RenderTransformOrigin="0.5,0.5" Background="Red" Foreground="White" FontSize="17" Height="55" Width="Auto" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.118"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="BtnServices" Click="BtnServices_Click"
+                    Content ="Список дополнительных услуг" Margin="131.6,97,29.8,0" Width="Auto" FontSize="16" Height="55" Background="Red" Foreground="White" VerticalAlignment="Top" />
+            <Button x:Name="BtnNomer" Click="BtnNomer_Click"          
+                    Content ="Список номеров" Margin="530,-29,-368.6,185" FontSize="17" Width="Auto" Height="55" Background="Red" Foreground="White"/>
+            <Button x:Name="BtnReservation" Click="BtnReservation_Click"  
+                    Content ="Бронирование" Margin="-368.4,-29,523.8,185" FontSize="17" Width="Auto" Height="55" Background="Red" Foreground="White"/>
+            <Button x:Name="BtnPersonnel" Click="BtnPersonnel_Click"
+                  
+                    Content ="Список сотрудников" Margin="530,-164.8,-368.6,332.8" FontSize="16" Height="55" Width="Auto" Background="Red" Foreground="White"/>
+            <Button x:Name="BtnReservServices" Click="BtnReservServices_Click"
+               
+                Content ="Дополнитальные сервисы&#xD;&#xA; клиента" Margin="-368.4,-164.8,523.8,332.8" FontSize="16" Width="Auto" Height="55" Background="Red" Foreground="White"/>
+        </UniformGrid>
+    </Grid>
+</Window>

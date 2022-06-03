@@ -1,0 +1,45 @@
+﻿<Window x:Class="diplom.WindowForm.WindowReservation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom.WindowForm"
+        mc:Ignorable="d"
+        Title="WindowReservation" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackLetters" Orientation="Horizontal" Background="{StaticResource ColorMain}" Margin="0,0,-0.4,5">
+        </StackPanel>
+        <Grid Margin="3,0,-3.4,0">
+            <TextBlock FontSize="18" Margin="0,16,580,20" Foreground="White" RenderTransformOrigin="0.507,0.152" >Бронирование</TextBlock>
+        </Grid>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"/>
+        <DataGrid x:Name="DataGridReservation" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Client" Binding="{Binding Client.Firstname}"/>
+                <DataGridTextColumn Header="Date_check_in" Binding="{Binding Date_check_in}"/>
+                <DataGridTextColumn Header="Date_eviction" Binding="{Binding Date_eviction}"/>
+                <DataGridTextColumn Header="KolvoDay" Binding="{Binding KolvoDay}"/>
+                <DataGridTextColumn Header="Nomer" Binding="{Binding Nomer.ID}"/>
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Personnel" Binding="{Binding Personnel.Firstname}"/>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEdit" Click="BtnEdit_Click">Изменить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button x:Name="BtnAddReservation" Click="BtnAddReservation_Click"  Style="{StaticResource MenuButton}" Content="Добавить" Margin="20,10" FontSize="15" Height="Auto" />
+            <Button x:Name="BtnDeleteReservation" Click="BtnDeleteReservation_Click"  Style="{StaticResource MenuButton}"  Content="Удалить"  FontSize="15" Margin="20,10" Height="Auto" Width="202"/>
+            <Button x:Name="BtnBackReservation" Click="BtnBackReservation_Click"  Style="{StaticResource MenuButton}"  Content="Назад" FontSize="15" Margin="20,10" Height="Auto"/>
+        </StackPanel>
+    </Grid>
+</Window>
